@@ -2,7 +2,7 @@ name: Create Docker images
 on:
   push:
     tags:
-      - refs/tags/build-image/v*
+      - build-image/v*
   # TODO: Remove this later
 #   pull_request:
 jobs:
