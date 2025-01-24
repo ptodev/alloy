@@ -6,12 +6,9 @@ on:
 jobs:
   linux_build_image:
     name: Create a Linux build image
-    runs-on:
-      labels: github-hosted-ubuntu-x64-small
-    # container:
-    #   image: grafana/alloy-build-image:v0.1.8
-    #   volumes:
-    #     - /var/run/docker.sock
+    runs-on: ubuntu-latest
+    # runs-on:
+    #   labels: github-hosted-ubuntu-x64-small
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -42,12 +39,9 @@ jobs:
 
   linux_build_image_boringcrypto:
     name: Create Linux build image for boringcrypto
-    runs-on:
-      labels: github-hosted-ubuntu-x64-small
-    # container:
-    #   image: grafana/alloy-build-image:v0.1.8
-    #   volumes:
-    #     - /var/run/docker.sock
+    runs-on: ubuntu-latest
+    # runs-on:
+    #   labels: github-hosted-ubuntu-x64-small
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
