@@ -21,8 +21,8 @@ jobs:
       # That's because it generates a new file.
       # We don't want this file to end up in the repo directory.
       # Then "tools/image-tag" would get confused because "git status" no longer reports a clean repo.
-    - name: Login to DockerHub (from vault)
-      uses: grafana/shared-workflows/actions/dockerhub-login@dockerhub-login-v1.0.1
+    # - name: Login to DockerHub (from vault)
+    #   uses: grafana/shared-workflows/actions/dockerhub-login@dockerhub-login-v1.0.1
 
     - name: Checkout code
       uses: actions/checkout@v4
