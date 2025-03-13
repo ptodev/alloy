@@ -13,8 +13,9 @@ jobs:
   publish_release:
     name: Publish release
     container: grafana/alloy-build-image:v0.1.8
-    runs-on:
-      labels: github-hosted-ubuntu-x64-large
+    # runs-on:
+    #   labels: github-hosted-ubuntu-x64-large
+    runs-on: ubuntu-latest
     steps:
       # This step needs to run before "Checkout code".
       # That's because it generates a new file.
