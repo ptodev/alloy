@@ -20,6 +20,10 @@ Main (unreleased)
 
 - Removed syntax highlighting from the component details UI view to improve
   rendering performance. (@tpaschalis)
+  
+### Other changes
+
+- A new `grafana/alloy:vX.Y.Z-windowsservercore-ltsc2022` Docker image is now published on DockerHub. (@ptodev)
 
 v1.8.0-rc.2
 -----------------
