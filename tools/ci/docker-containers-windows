@@ -32,8 +32,8 @@ else
   IMAGE_NAME_SUFFIX="nanoserver-1809"
 fi
 
-export RELEASE_ALLOY_IMAGE=grafana/alloy
-export DEVEL_ALLOY_IMAGE=grafana/alloy-dev
+export RELEASE_ALLOY_IMAGE=ptodev/alloy
+export DEVEL_ALLOY_IMAGE=ptodev/alloy-dev
 
 # TODO: Unit test this script? Test cases:
 # * Input:  GITHUB_REF_TYPE=tag GITHUB_REF_NAME=v1.8.0 ./tools/ci/docker-containers-windows alloy

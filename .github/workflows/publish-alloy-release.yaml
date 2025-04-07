@@ -3,6 +3,7 @@ on:
   push:
     tags:
       - v*
+  pull_request:
 
 jobs:
   publish_windows_container:
