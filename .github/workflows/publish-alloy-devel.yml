@@ -1,4 +1,4 @@
-name: Publish alloy-devel container
+name: Publish alloy-devel containers
 on:
   push:
     branches:
