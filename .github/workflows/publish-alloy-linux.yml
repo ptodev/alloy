@@ -23,6 +23,7 @@ jobs:
   publish_linux_container:
     name: Publish Alloy Linux container
     container: grafana/alloy-build-image:v0.1.19
+    # TODO: Revert this later
     runs-on: ubuntu-latest
     # runs-on:
     #   labels: github-hosted-ubuntu-x64-large
@@ -34,8 +35,9 @@ jobs:
       # That's because it generates a new file.
       # We don't want this file to end up in the repo directory.
       # Then "tools/image-tag" would get confused because "git status" no longer reports a clean repo.
-    - name: Login to DockerHub (from vault)
-      uses: grafana/shared-workflows/actions/dockerhub-login@13fb504e3bfe323c1188bf244970d94b2d336e86 # dockerhub-login-v1.0.1
+    # TODO: Revert this later
+    # - name: Login to DockerHub (from vault)
+    #   uses: grafana/shared-workflows/actions/dockerhub-login@13fb504e3bfe323c1188bf244970d94b2d336e86 # dockerhub-login-v1.0.1
 
     - name: Checkout code
       uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
