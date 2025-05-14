@@ -23,8 +23,9 @@ jobs:
   publish_linux_container:
     name: Publish Alloy Linux container
     container: grafana/alloy-build-image:v0.1.19
-    runs-on:
-      labels: github-hosted-ubuntu-x64-large
+    runs-on: ubuntu-latest
+    # runs-on:
+    #   labels: github-hosted-ubuntu-x64-large
     permissions:
       contents: read
       id-token: write
