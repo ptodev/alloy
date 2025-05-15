@@ -3,6 +3,8 @@
 # This script should be run from the root of the repository.
 set -ex
 
+mkdir dist
+
 # Zip up all the binaries to reduce the download size. DEBs and RPMs
 # aren't included to be easier to work with.
 find dist/ -type f \
