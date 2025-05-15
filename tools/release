@@ -4,6 +4,7 @@
 set -ex
 
 mkdir dist
+touch dist/alloy_binary
 
 # Zip up all the binaries to reduce the download size. DEBs and RPMs
 # aren't included to be easier to work with.
