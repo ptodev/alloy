@@ -42,6 +42,7 @@ jobs:
     # - publish_windows_container
     permissions:
       contents: read
+      # contents: write
       id-token: write
     steps:
     - name: Checkout code
@@ -67,3 +68,5 @@ jobs:
       if: ${{ github.ref_type == 'tag' }}
       run: |
         VERSION="${GITHUB_REF_NAME}" RELEASE_DOC_TAG=$(echo "${GITHUB_REF_NAME}" | awk -F '.' '{print $1"."$2}') ./tools/release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
