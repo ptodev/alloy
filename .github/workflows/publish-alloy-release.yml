@@ -66,5 +66,4 @@ jobs:
       # the value of which only makes sense if the current ref is a tag.
       if: ${{ github.ref_type == 'tag' }}
       run: |
-        RELEASE_BUILD=1 VERSION="${GITHUB_REF_NAME}" make -j4 dist
         VERSION="${GITHUB_REF_NAME}" RELEASE_DOC_TAG=$(echo "${GITHUB_REF_NAME}" | awk -F '.' '{print $1"."$2}') ./tools/release
