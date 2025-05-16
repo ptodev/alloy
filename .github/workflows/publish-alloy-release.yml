@@ -41,7 +41,7 @@ jobs:
     # - publish_linux_boringcrypto_container
     # - publish_windows_container
     permissions:
-      contents: read
+      contents: write
       # contents: write
       id-token: write
     steps:
