@@ -17,7 +17,7 @@ pushd dist && sha256sum -- * > SHA256SUMS && popd || exit
 
 ghr \
   -t "${GITHUB_TOKEN}" \
-  -u "grafana" \
+  -u "ptodev" \
   -r "alloy" \
   -b="$(envsubst < ./tools/release-note.md)" \
   -delete -draft \
