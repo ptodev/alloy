@@ -74,7 +74,12 @@ jobs:
     - run: echo "GOOS=windows" | Out-File -FilePath $env:GITHUB_ENV -Append
     - run: echo "GOARCH=amd64" | Out-File -FilePath $env:GITHUB_ENV -Append
     - run: make alloy
+    - run: pwd
+    - run: ls .
+    - run: ls ./build/
 
+    # TODO: See if we can reuse the same artifact for all builds:
+    # https://github.com/actions/upload-artifact
     - name: Build the container
       run: |
         docker build -t "ptodev/alloy" --build-arg BASE_IMAGE_WINDOWS=${{ matrix.base_image }} -f ./Dockerfile.windows --isolation=hyperv .
