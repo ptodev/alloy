@@ -7,7 +7,7 @@ RUN cd
 
 WORKDIR /src/alloy
 
-COPY ["./build/alloy", "C:/Program Files/GrafanaLabs/Alloy/alloy.exe"]
+COPY ["./alloy", "C:/Program Files/GrafanaLabs/Alloy/alloy.exe"]
 COPY ["./example-config.alloy", "C:/Program Files/GrafanaLabs/Alloy/config.alloy"]
 
 ENTRYPOINT ["C:/Program Files/GrafanaLabs/Alloy/alloy.exe"]
