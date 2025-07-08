@@ -30,7 +30,6 @@ Write-Host "windowsVersion: $($windowsVersion)"
 pwd
 
 docker build -t $target --build-arg BASE_IMAGE_WINDOWS=$imageName -f ./Dockerfile.windows --isolation=hyperv .
-# docker login --username ptodev --password $env:DOCKERHUB_TOKEN
 docker push $target
 docker image ls
 

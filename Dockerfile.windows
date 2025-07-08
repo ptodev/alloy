@@ -5,10 +5,9 @@ FROM ${BASE_IMAGE_WINDOWS}
 
 RUN cd
 
-# COPY . /src/alloy
 WORKDIR /src/alloy
 
-# COPY ["./alloy.exe", "C:/Program Files/GrafanaLabs/Alloy/alloy.exe"]
+COPY ["./alloy.exe", "C:/Program Files/GrafanaLabs/Alloy/alloy.exe"]
 COPY ["./example-config.alloy", "C:/Program Files/GrafanaLabs/Alloy/config.alloy"]
 
 ENTRYPOINT ["C:/Program Files/GrafanaLabs/Alloy/alloy.exe"]
