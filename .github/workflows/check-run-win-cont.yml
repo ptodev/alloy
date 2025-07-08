@@ -1,0 +1,18 @@
+name: Run Windows container
+on:
+  push:
+    branches:
+      - check-container-run
+
+permissions:
+  contents: read
+
+jobs:
+  check_run_windows_container:
+    name: Test Alloy Windows container
+    runs-on: windows-2025
+    steps:
+    - name: Build and publish the container
+      run: |
+        docker run --name alloyTest ptodev/alloy-dev:latest
+        docker logs alloyTest
