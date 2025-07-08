@@ -79,7 +79,7 @@ jobs:
     - name: Build and publish the container
       # TODO: Run "make alloy-image-windows" instead?
       run: |
-        ./tools/ci/docker-containers-windows.ps1 -target "ptodev/alloy-dev" -goVersion "testVersion" -imageName "mcr.microsoft.com/windows/nanoserver:ltsc2022"
+        ./tools/ci/docker-containers-windows.ps1 -target "ptodev/alloy" -goVersion "testVersion" -imageName "mcr.microsoft.com/windows/nanoserver:ltsc2022"
       # env:
       #   SHOULD_PUSH_ALLOY_IMAGE: ${{ inputs.push }}
       #   IMG_NAME: ${{ inputs.img-name }}
