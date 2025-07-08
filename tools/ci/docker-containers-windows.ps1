@@ -32,6 +32,7 @@ pwd
 docker build -t $target --build-arg BASE_IMAGE_WINDOWS=$imageName -f ./Dockerfile.windows --isolation=hyperv .
 # docker login --username ptodev --password $env:DOCKERHUB_TOKEN
 docker push $target
+docker image ls
 
 # docker build -t "ptodev/alloy-dev" --build-arg VERSION="paulintest" --build-arg RELEASE_BUILD=1 --build-arg BASE_IMAGE_WINDOWS="mcr.microsoft.com/windows/nanoserver:ltsc2022" -f ./Dockerfile.windows --isolation=hyperv .
 # docker push "ptodev/alloy-dev"
