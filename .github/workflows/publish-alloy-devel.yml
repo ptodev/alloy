@@ -28,6 +28,7 @@ jobs:
 
   publish_windows_container:
     uses: ./.github/workflows/publish-alloy-windows.yml
+    secrets: inherit
     permissions:
       contents: read
       id-token: write
