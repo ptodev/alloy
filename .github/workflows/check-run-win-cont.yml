@@ -14,5 +14,5 @@ jobs:
     steps:
     - name: Build and publish the container
       run: |
-        docker run --name alloyTest ptodev/alloy-dev:latest
+        docker run --name alloyTest ptodev/alloy:latest
         docker logs alloyTest
