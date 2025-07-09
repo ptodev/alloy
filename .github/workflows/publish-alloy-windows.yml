@@ -24,13 +24,7 @@ jobs:
     name: Publish Alloy Windows container
     strategy:
       matrix:
-        os: [windows-2022, windows-2019]
-    # strategy:
-    #   matrix:
-    #     base_image:
-    #     - "mcr.microsoft.com/windows/nanoserver:ltsc2025"
-    #     - "mcr.microsoft.com/windows/nanoserver:ltsc2022"
-    #     - "mcr.microsoft.com/windows/nanoserver:ltsc2019"
+        os: [windows-2025, windows-2022, windows-2019]
     runs-on: windows-2025
     steps:
       # This step needs to run before "Checkout code".
@@ -70,29 +64,6 @@ jobs:
     # Copy the binary outside of the build directory,
     # because the build directiry is in the .dockerignore file.
     - run: cp ./build/alloy .
-    - run: pwd
-    - run: ls .
-    - run: ls ./build/
-
-    # # TODO: See if we can reuse the same artifact for all builds:
-    # # https://github.com/actions/upload-artifact
-    # - name: Build the container
-    #   run: |
-    #     docker build -t "ptodev/alloy" --build-arg BASE_IMAGE_WINDOWS=${{ matrix.base_image }} -f ./Dockerfile.windows --isolation=hyperv .
-
-    # - run: make alloy-image-windows
-    #   env:
-    #     ALLOY_IMAGE_WINDOWS: "ptodev/alloy"
-    #     BASE_IMAGE_WINDOWS: ${{ matrix.base_image }}
-
-    # - name: Test the container
-    #   run: |
-    #     docker run --name alloyTest ptodev/alloy-dev:latest
-    #     $i=1
-    #     for(;$i -le 10;$i++)
-    #     {
-    #       docker logs alloyTest
-    #     }
 
     - name: Build and publish the container
       # TODO: Run "make alloy-image-windows" instead?
@@ -101,9 +72,3 @@ jobs:
       env:
         SHOULD_PUSH_ALLOY_IMAGE: ${{ inputs.push }}
         IMG_NAME: ${{ inputs.img-name }}
-        # GO_VERSION: ${{ steps.get_go_version.outputs.alloy_go_version }}
-
-    # - name: Push the container
-    #   if: inputs.push
-    #   run: |
-    #     docker push "ptodev/alloy"
