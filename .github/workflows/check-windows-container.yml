@@ -33,4 +33,5 @@ jobs:
       id-token: write
     with:
       img-name: alloy-devel
-      push: false
+      # TODO: Revert this later
+      push: true
