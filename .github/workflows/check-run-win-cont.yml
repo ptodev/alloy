@@ -32,7 +32,7 @@ jobs:
           }
         }
 
-        if $success
+        if ($success)
         {
           Write-Host "Container ran successfully."
           Write-Host "Container failed to run. Check the logs for more details:\n", $log 
