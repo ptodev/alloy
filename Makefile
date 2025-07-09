@@ -222,9 +222,9 @@ alloy-image:
 images: alloy-image-windows
 
 alloy-image-windows: generate-ui alloy
-    # Copy the binary outside of the build directory,
-    # because the build directiry is in the .dockerignore file.
-    cp ./build/alloy .
+	# Copy the binary outside of the build directory,
+	# because the build directiry is in the .dockerignore file.
+	cp ./build/alloy .
 
 	docker build $(DOCKER_FLAGS) -t $(ALLOY_IMAGE_WINDOWS) -f Dockerfile.windows --isolation=hyperv .
 
