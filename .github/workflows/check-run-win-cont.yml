@@ -13,8 +13,9 @@ jobs:
     strategy:
       matrix:
         image:
-        - ptodev/alloy-dev:v1.10.0-devel-dirty-nanoserver-1809
-        - ptodev/alloy-dev:v1.10.0-devel-dirty-windowsservercore-ltsc2022
+        - ptodev/alloy-dev:nanoserver-1809
+        - ptodev/alloy-dev:windowsservercore-ltsc2022
+        - ptodev/alloy-dev:windowsservercore-ltsc2025
     runs-on: windows-2025
     steps:
 
