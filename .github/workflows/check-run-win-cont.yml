@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Build and publish the container
       run: |
-        docker run --detach --name alloyTest ptodev/alloy-dev:latest
+        docker run --detach --name alloyTest ptodev/alloy:latest
 
         Write-Host "Checking if the container is running..."
         $success = false
