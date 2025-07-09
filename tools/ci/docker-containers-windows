@@ -24,14 +24,22 @@ else
 fi
 
 WINDOWS_VERSION=${WINDOWS_VERSION:-}
-if [ "$WINDOWS_VERSION" = "windows-2022" ]; then
+if [ "$WINDOWS_VERSION" = "windows-2025" ]; then
+  export BASE_IMAGE_WINDOWS="mcr.microsoft.com/windows/nanoserver:ltsc2025"
+  IMAGE_NAME_SUFFIX="windowsservercore-ltsc2025"
+else if [ "$WINDOWS_VERSION" = "windows-2022" ]; then
   export BASE_IMAGE_WINDOWS="mcr.microsoft.com/windows/nanoserver:ltsc2022"
   IMAGE_NAME_SUFFIX="windowsservercore-ltsc2022"
-else
+else if [ "$WINDOWS_VERSION" = "windows-2019" ]; then
   export BASE_IMAGE_WINDOWS="mcr.microsoft.com/windows/nanoserver:ltsc2019"
   # We aren't calling this windows-2019 for backwards compatibility reasons.
   # Alloy used to always call this nanoserver-1809.
   IMAGE_NAME_SUFFIX="nanoserver-1809"
+else
+  # Report invalid windows base image and exit with code 1
+  echo "Invalid windows base image: $WINDOWS_VERSION"
+  echo "Valid values are: windows-2025, windows-2022, windows-2019"
+  exit 1
 fi
 
 export RELEASE_ALLOY_IMAGE=ptodev/alloy
